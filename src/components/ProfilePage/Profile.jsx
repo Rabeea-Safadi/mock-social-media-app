@@ -24,10 +24,11 @@ export default function Profile() {
           Website
         </a>
       </h4>
-      <div>
+      <div className={styles["address"]}>
         <h2>Address</h2>
-        <h3>City {selectedUser.address.city}</h3>
-        <h4>Zipcode {selectedUser.address.zipcode}</h4>
+        <hr />
+        <h3>{selectedUser.address.city}</h3>
+        <h4>{selectedUser.address.zipcode}</h4>
       </div>
     </div>
   ) : (

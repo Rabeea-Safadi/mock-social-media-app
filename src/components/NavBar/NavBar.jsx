@@ -25,7 +25,6 @@ export default function NavBar({ links }) {
           </a>
         ))}
       </div>
-      <hr />
     </>
   );
 }
