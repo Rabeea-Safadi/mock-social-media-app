@@ -1,21 +1,10 @@
-import { useEffect, useContext } from "react";
+import { useContext } from "react";
 import { UserContext } from "../Context/UserContext";
 import styles from "./Users.module.css";
 import LoadingWindow from "../LoadingWindow/LoadingWindow";
 
 export default function Users() {
   const userCtx = useContext(UserContext);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const res = await fetch("https://jsonplaceholder.typicode.com/users");
-      const users = await res.json();
-
-      userCtx.setUsers(users);
-    };
-
-    fetchData();
-  }, []);
 
   return userCtx.users.length > 0 ? (
     <table className={styles["users-table"]}>

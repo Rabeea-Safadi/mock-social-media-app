@@ -4,6 +4,7 @@ import NavBar from "./components/NavBar/NavBar";
 import Users from "./components/UsersPage/Users";
 import Posts from "./components/PostsPage/Posts";
 import UserProvider from "./components/Context/UserContext";
+import Profile from "./components/ProfilePage/Profile";
 
 const { BrowserRouter, Routes, Route } = require("react-router-dom");
 
@@ -36,6 +37,7 @@ export default function App(props) {
           <Route path="/about" element={<About />} />
           <Route path="/users" element={<Users />} />
           <Route path="/posts" element={<Posts />} />
+          <Route path="/profile/:id" element={<Profile />} />
         </Routes>
       </BrowserRouter>
     </UserProvider>
