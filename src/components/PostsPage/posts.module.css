@@ -1,0 +1,22 @@
+.post-container {
+  padding: 15px;
+  margin: 20px;
+}
+
+.post {
+  padding: 15px;
+  margin: 20px;
+}
+
+.post-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.post-owner {
+  color: rgb(0, 106, 255);
+}
+
+.post-body {
+  font-size: 1rem;
+}
