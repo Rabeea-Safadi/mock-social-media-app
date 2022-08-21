@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { useParams } from "react-router-dom";
 import { UserContext } from "../Context/UserContext";
+import styles from "./Profile.module.css";
 
 export default function Profile() {
   const { id } = useParams();
@@ -8,8 +9,9 @@ export default function Profile() {
   const selectedUser = users.find((user) => user.id == id);
   console.log(users, selectedUser);
   return selectedUser !== undefined ? (
-    <div>
-      <h1>{selectedUser.name}</h1>
+    <div className={styles["profile-container"]}>
+      <h1 className={styles["profile-name"]}>{selectedUser.name}</h1>
+      <hr />
       <h2>@{selectedUser.username}</h2>
       <h3>{selectedUser.email}</h3>
       <h3>{selectedUser.phone}</h3>
@@ -29,6 +31,6 @@ export default function Profile() {
       </div>
     </div>
   ) : (
-    <div>User Not Found</div>
+    <div>Getting user data, Please wait...</div>
   );
 }
