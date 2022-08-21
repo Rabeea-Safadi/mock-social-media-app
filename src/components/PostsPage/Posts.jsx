@@ -1,5 +1,6 @@
 import { useEffect, useContext } from "react";
 import { UserContext } from "../Context/UserContext";
+import LoadingWindow from "../LoadingWindow/LoadingWindow";
 import styles from "./posts.module.css";
 
 export default function Posts() {
@@ -34,11 +35,11 @@ export default function Posts() {
     fetchPosts();
   }, []);
 
-  return posts.length > 0 ? (
+  return posts.length < 0 ? (
     <div className={styles["post-container"]}>
       {posts.map((item) => createPost(item))}
     </div>
   ) : (
-    <h1>Getting Posts</h1>
+    <LoadingWindow />
   );
 }
